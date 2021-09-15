@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">My Second Lesson</string>
+    <string name="result_text">0</string>
+    <string name="digit_zero_button">0</string>
+    <string name="digit_one_button">1</string>
+    <string name="digit_two_button">2</string>
+    <string name="digit_three_button">3</string>
+    <string name="digit_four_button">4</string>
+    <string name="digit_five_button">5</string>
+    <string name="digit_six_button">6</string>
+    <string name="digit_seven_button">7</string>
+    <string name="digit_eight_button">8</string>
+    <string name="digit_nine_button">9</string>
+    <string name="button_add">+</string>
+    <string name="button_sub">-</string>
+    <string name="button_mult">*</string>
+    <string name="button_div">/</string>
+    <string name="button_res">=</string>
+    <string name="button_dot">.</string>
 </resources>
