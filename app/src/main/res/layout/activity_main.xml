@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:gravity="center_horizontal"
-android:orientation="vertical"
-tools:context=".MainActivity">
-
-<TextView
-    android:id="@+id/view_result"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/layout_height"
-    android:textColor="@color/black"
-    android:layout_gravity="center_horizontal"
-    android:layout_marginStart="@dimen/layout_margin_left_text_view"
-    android:layout_marginTop="@dimen/layout_margin_top_text_view"
-    android:layout_marginEnd="@dimen/layout_margin_right_text_view"
-    android:gravity="end"
-    android:text="@string/result_text"
-    android:textSize="@dimen/text_view_text_size" />
+    android:layout_height="match_parent"
+    android:background="@drawable/calc_background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/view_result"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/layout_margin_left_text_view"
+        android:layout_marginTop="@dimen/layout_margin_top_text_view"
+        android:layout_marginEnd="@dimen/layout_margin_right_text_view"
+        android:gravity="end"
+        android:text="@string/result_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_view_text_size" />
 
     <GridLayout
         android:layout_width="wrap_content"
@@ -34,7 +37,7 @@ tools:context=".MainActivity">
             android:layout_height="@dimen/buttonLayout_height"
             android:layout_marginEnd="@dimen/button_regular_margin_end"
             android:tag="7"
-            android:text="@string/button_7"/>
+            android:text="@string/button_7" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_8"
