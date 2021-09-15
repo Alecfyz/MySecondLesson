@@ -121,7 +121,36 @@ tools:context=".MainActivity">
             android:tag="*"
             android:text="@string/button_mult" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_0"
+            android:layout_width="@dimen/buttonLayout_width"
+            android:layout_height="@dimen/buttonLayout_height"
+            android:layout_marginEnd="@dimen/button_regular_margin_end"
+            android:tag="0"
+            android:text="@string/button_0" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_dot"
+            android:layout_width="@dimen/buttonLayout_width"
+            android:layout_height="@dimen/buttonLayout_height"
+            android:layout_marginEnd="@dimen/button_regular_margin_end"
+            android:tag="."
+            android:text="@string/button_dot" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_get_result"
+            android:layout_width="@dimen/buttonLayout_width"
+            android:layout_height="@dimen/buttonLayout_height"
+            android:layout_marginEnd="@dimen/button_fringe_margin_end"
+            android:tag="="
+            android:text="@string/button_res" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_div"
+            android:layout_width="@dimen/buttonLayout_width"
+            android:layout_height="@dimen/buttonLayout_height"
+            android:tag="/"
+            android:text="@string/button_div" />
 
     </GridLayout>
 
