@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">My Second Lesson</string>
     <string name="result_text">0</string>
+    <string name="button_7">7</string>
+    <string name="button_8">8</string>
+    <string name="button_9">9</string>
+    <string name="button_add">+</string>
+
 </resources>

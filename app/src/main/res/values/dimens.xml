@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="columnCount">4</dimen>
+    <dimen name="column_count">4</dimen>
     <dimen name="layout_marginEnd">30dp</dimen>
     <dimen name="layout_marginStart">30dp</dimen>
     <dimen name="text_view_text_size">50sp</dimen>
@@ -8,5 +8,9 @@
     <dimen name="layout_margin_top_text_view">15dp</dimen>
     <dimen name="layout_margin_left_text_view">50dp</dimen>
     <dimen name="layout_height">120dp</dimen>
-    <dimen name="calcBut_textsize">24sp</dimen>
+    <dimen name="calc_buttons_textsize">24sp</dimen>
+    <dimen name="buttonLayout_width">60dp</dimen>
+    <dimen name="buttonLayout_height">60dp</dimen>
+    <dimen name="button_regular_margin_end">5dp</dimen>
+    <dimen name="button_fringe_margin_end">10dp</dimen>
 </resources>
