@@ -59,6 +59,68 @@ tools:context=".MainActivity">
             android:tag="+"
             android:text="@string/button_add" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_4"
+            android:layout_width="@dimen/buttonLayout_width"
+            android:layout_height="@dimen/buttonLayout_height"
+            android:layout_marginEnd="@dimen/button_regular_margin_end"
+            android:tag="4"
+            android:text="@string/button_4" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_5"
+            android:layout_width="@dimen/buttonLayout_width"
+            android:layout_height="@dimen/buttonLayout_height"
+            android:layout_marginEnd="@dimen/button_regular_margin_end"
+            android:tag="5"
+            android:text="@string/button_5" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_6"
+            android:layout_width="@dimen/buttonLayout_width"
+            android:layout_height="@dimen/buttonLayout_height"
+            android:layout_marginEnd="@dimen/button_fringe_margin_end"
+            android:tag="6"
+            android:text="@string/button_6" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_minus"
+            android:layout_width="@dimen/buttonLayout_width"
+            android:layout_height="@dimen/buttonLayout_height"
+            android:tag="-"
+            android:text="@string/button_sub" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn1"
+            android:layout_width="@dimen/buttonLayout_width"
+            android:layout_height="@dimen/buttonLayout_height"
+            android:layout_marginEnd="@dimen/button_regular_margin_end"
+            android:tag="1"
+            android:text="@string/button_1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_2"
+            android:layout_width="@dimen/buttonLayout_width"
+            android:layout_height="@dimen/buttonLayout_height"
+            android:layout_marginEnd="@dimen/button_regular_margin_end"
+            android:tag="2"
+            android:text="@string/button_2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_3"
+            android:layout_width="@dimen/buttonLayout_width"
+            android:layout_height="@dimen/buttonLayout_height"
+            android:layout_marginEnd="@dimen/button_fringe_margin_end"
+            android:tag="3"
+            android:text="@string/button_3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_mult"
+            android:layout_width="@dimen/buttonLayout_width"
+            android:layout_height="@dimen/buttonLayout_height"
+            android:tag="*"
+            android:text="@string/button_mult" />
+
 
 
     </GridLayout>
