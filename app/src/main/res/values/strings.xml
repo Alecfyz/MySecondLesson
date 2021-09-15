@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Second Lesson</string>
+    <string name="result_text">0</string>
 </resources>
