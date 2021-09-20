@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Second Lesson</string>
+    <string name="app_name">Abacus</string>
     <string name="result_text">0</string>
     <string name="digit_zero_button">0</string>
     <string name="digit_one_button">1</string>
@@ -17,4 +17,7 @@
     <string name="button_div">/</string>
     <string name="button_res">=</string>
     <string name="button_dot">.</string>
+    <string name="clear_button">AC</string>
+    <string name="switch_to_horiz_button">Инженерный</string>
+    <string name="switch_to_main_button">Обычный</string>
 </resources>

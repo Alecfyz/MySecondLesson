@@ -8,7 +8,7 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/calc_background"
+        app:srcCompat="@drawable/milkyway"
         android:scaleType="centerCrop" />
 
     <LinearLayout
@@ -177,16 +177,16 @@
                 android:text="@string/button_div" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/switch_to_horiz_button"
+                android:id="@+id/switch_to_main_button"
                 android:layout_width="@dimen/button_extended_width"
                 android:layout_height="@dimen/button_layout_height"
                 android:layout_marginEnd="@dimen/button_regular_margin_end"
-                android:tag="switch_to_horiz"
-                android:text="@string/switch_to_horiz_button"
+                android:tag="switch_to_main"
+                android:text="@string/switch_to_main_button"
                 android:layout_marginTop="32dp"
                 android:layout_marginRight="46dp"
                 android:layout_columnSpan="4"
-                android:layout_gravity="right"/>
+                android:layout_gravity="left"/>
         </GridLayout>
 
     </LinearLayout>

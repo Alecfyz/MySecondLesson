@@ -3,14 +3,15 @@
     <dimen name="column_count">4</dimen>
     <dimen name="marginEnd_layout">30dp</dimen>
     <dimen name="marginStart_layout">30dp</dimen>
-    <dimen name="text_size_text_view">50sp</dimen>
+    <dimen name="text_size_text_view">30sp</dimen>
     <dimen name="layout_margin_right_text_view">50dp</dimen>
     <dimen name="layout_margin_top_text_view">15dp</dimen>
     <dimen name="layout_margin_left_text_view">50dp</dimen>
-    <dimen name="height_layout">120dp</dimen>
+    <dimen name="height_layout">50dp</dimen>
     <dimen name="calc_buttons_textsize">24sp</dimen>
     <dimen name="button_layout_width">60dp</dimen>
     <dimen name="button_layout_height">60dp</dimen>
     <dimen name="button_regular_margin_end">5dp</dimen>
     <dimen name="button_fringe_margin_end">10dp</dimen>
+    <dimen name="button_extended_width">150</dimen>
 </resources>
