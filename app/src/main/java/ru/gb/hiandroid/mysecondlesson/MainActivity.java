@@ -13,16 +13,22 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "@@@ MainActivity";
+    private static final String COUNTER_KEY = "counter_key";
+
     private Button switchToExtendButton;
     private TextView resultTV;
-    private int counter = 0;
+    private int counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        switchToExtendButton = findViewById(R.id.switch_to_horiz_button);
+if (savedInstanceState != null && savedInstanceState.containsKey(COUNTER_KEY)) {
+    counter = savedInstanceState.getInt(COUNTER_KEY);
+} else counter = 0;
+
+        switchToExtendButton = findViewById(R.id.switch_to_extended_button);
         switchToExtendButton.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ExtendedActivity.class);
             startActivity(intent);
@@ -45,15 +51,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
+        outState.putInt(COUNTER_KEY, counter);
 
         Log.d(TAG, "onSaveInstanceState MainActivity");
     }
 
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-
-        Log.d(TAG, "onRestoreInstanceState MainActivity");
-
-    }
 }

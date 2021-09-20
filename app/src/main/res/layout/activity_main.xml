@@ -177,7 +177,7 @@
                 android:text="@string/button_div" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/switch_to_horiz_button"
+                android:id="@+id/switch_to_extended_button"
                 android:layout_width="@dimen/button_extended_width"
                 android:layout_height="@dimen/button_layout_height"
                 android:layout_marginEnd="@dimen/button_regular_margin_end"
