@@ -18,6 +18,8 @@
     <string name="button_res">=</string>
     <string name="button_dot">.</string>
     <string name="clear_button">AC</string>
+    <string name="counter_text">Счетчик</string>
     <string name="switch_to_horiz_button">Инженерный</string>
     <string name="switch_to_main_button">Обычный</string>
+
 </resources>
