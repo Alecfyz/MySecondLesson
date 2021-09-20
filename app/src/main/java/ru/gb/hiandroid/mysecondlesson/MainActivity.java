@@ -24,22 +24,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-if (savedInstanceState != null && savedInstanceState.containsKey(COUNTER_KEY)) {
-    counter = savedInstanceState.getInt(COUNTER_KEY);
-} else counter = 0;
+        if (savedInstanceState != null && savedInstanceState.containsKey(COUNTER_KEY)) {
+            counter = savedInstanceState.getInt(COUNTER_KEY);
+        } else counter = 0;
+
+        resultTV = findViewById(R.id.view_result);
+        resultTV.setText(String.valueOf(counter));
 
         switchToExtendButton = findViewById(R.id.switch_to_extended_button);
+
         switchToExtendButton.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ExtendedActivity.class);
             startActivity(intent);
-            resultTV = findViewById(R.id.view_result);
-//            resultTV.setText(R.string.counter_text + " " + String.valueOf(++counter));
             resultTV.setText(String.valueOf(++counter));
         });
 
 
         Log.d(TAG, "OnCreate MainActivity");
-        Toast.makeText(getApplicationContext(), "OnCreate MainActivity", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "OnCreate MainActivity c=" + String.valueOf(counter), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     @Override
