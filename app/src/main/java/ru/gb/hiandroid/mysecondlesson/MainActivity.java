@@ -25,12 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        String screeenOrientation = getScreenOrientation();
-        if (getScreenOrientation().equals("land")) {
-            screeenOrientation = "Horizontal orientation";
-        } else {
-            screeenOrientation = "Vertical orientation";
-        }
+        screeenOrientation = getScreenOrientation().equals("land")?"Horizontal orientation":"Vertical orientation";
 
         CalcText = findViewById(R.id.view_result);
         setNumberButtonListeners();
