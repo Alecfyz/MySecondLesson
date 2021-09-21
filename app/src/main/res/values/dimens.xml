@@ -16,4 +16,6 @@
     <dimen name="button_extended_width">155dp</dimen>
     <dimen name="tv_layout_height_land">120dp</dimen>
     <dimen name="tv_layout_width_land">173dp</dimen>
+    <dimen name="button_layout_width_land">50dp</dimen>
+    <dimen name="button_layout_height_land">50dp</dimen>
 </resources>

@@ -1,5 +1,6 @@
 package ru.gb.hiandroid.mysecondlesson;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String CALC_STRING = "CALC_STRING";
     private TextView CalcText;
     private Calculator calculator;
+    private static String screeenOrientation;
 
     private static final String TAG = "@@@ MainActivity";
 
@@ -22,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        String screeenOrientation = getScreenOrientation();
+        if (getScreenOrientation() == "land") { screeenOrientation = "Horizontal orientation"; }
+        else { screeenOrientation = "Vertical orientation"; }
 
         CalcText = findViewById(R.id.view_result);
         setNumberButtonListeners();
@@ -80,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG, "OnDestroy MainActivity");
+        logCycle("OnDestroy MainActivity");
     }
 
     private final int[] numberButtonIds = new int[]{R.id.digit_zero_button, R.id.digit_one_button, R.id.digit_two_button, R.id.digit_three_button,
@@ -106,9 +112,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void logCycle(String message) {
-        Log.d("MainActivity", message);
-
+        Log.d(TAG + " (" + screeenOrientation + ")", message);
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    private String getScreenOrientation(){
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
+            return "port";
+        else if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+            return "land";
+        else
+            return "";
     }
 
 }
