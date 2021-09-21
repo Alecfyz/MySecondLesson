@@ -29,9 +29,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (savedInstanceState != null && savedInstanceState.containsKey(COUNTER_KEY)) {
-            counter = savedInstanceState.getInt(COUNTER_KEY);
-        } else counter = 0;
+        CalcText = findViewById(R.id.view_result);
+        setNumberButtonListeners();
+        if (savedInstanceState == null) {
+            //First launch
+
+            calculator = new Calculator();
+
+            logCycle("onCreate First Launch");
+        } else {
+            logCycle("onCreate Recreate Launch");
+            calculator = savedInstanceState.getParcelable(CALC_STRING);
+
+//            CalcText.setText(getString(R.string.calc_res, calculator.getCurString()));
+            CalcText.setText(calculator.getCurString());
+        }
 
 //        resultTV = findViewById(R.id.view_result);
 //        resultTV.setText(String.valueOf(counter));
