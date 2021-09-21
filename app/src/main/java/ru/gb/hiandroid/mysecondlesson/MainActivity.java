@@ -60,6 +60,22 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "OnDestroy MainActivity");
     }
 
+    private final int[] numberButtonIds = new int[]{R.id.digit_zero_button, R.id.digit_one_button, R.id.digit_two_button, R.id.digit_three_button,
+            R.id.digit_four_button, R.id.digit_five_button, R.id.digit_six_button, R.id.digit_seven_button, R.id.digit_eight_button, R.id.digit_nine_button};
+
+
+    private void setNumberButtonListeners() {
+        for (int i = 0; i < numberButtonIds.length; i++) {
+            findViewById(numberButtonIds[i]).setOnClickListener(v -> {
+                Button btn = (Button)v;
+                String btnStrng = btn.getTag().toString();
+                logCycle("Key <" + btnStrng + "> pressed");
+                calculator.readkey(btnStrng);
+                CalcText.setText(calculator.getCurString());
+            });
+        }
+    }
+
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         outState.putParcelable(CALC_STRING, calculator);
