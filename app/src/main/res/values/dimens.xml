@@ -13,5 +13,5 @@
     <dimen name="button_layout_height">60dp</dimen>
     <dimen name="button_regular_margin_end">5dp</dimen>
     <dimen name="button_fringe_margin_end">10dp</dimen>
-    <dimen name="button_extended_width">150</dimen>
+    <dimen name="button_extended_width">155</dimen>
 </resources>
