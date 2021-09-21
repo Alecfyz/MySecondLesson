@@ -20,7 +20,7 @@
     <string name="clear_button">AC</string>
     <string name="clear_button_land">Clear</string>
     <string name="counter_text">Счетчик</string>
-    <string name="switch_to_horiz_button">Расширенный</string>
+    <string name="switch_to_horiz_button">Reserved</string>
     <string name="switch_to_main_button">Обычный</string>
 
 </resources>
