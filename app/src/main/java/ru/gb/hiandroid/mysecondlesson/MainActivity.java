@@ -18,10 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "@@@ MainActivity";
 
-/*    private Button switchToExtendButton;
-    private TextView resultTV;
-    private int counter;*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +36,6 @@ public class MainActivity extends AppCompatActivity {
             CalcText.setText(calculator.getCurString());
         }
 
-/*        switchToExtendButton = findViewById(R.id.switch_to_extended_button);
-
-        switchToExtendButton.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), ExtendedActivity.class);
-            startActivity(intent);
-            resultTV.setText(String.valueOf(++counter));
-        });*/
 
         findViewById(R.id.add_operation_button).setOnClickListener(v -> {
             logCycle("Key < + > pressed");
