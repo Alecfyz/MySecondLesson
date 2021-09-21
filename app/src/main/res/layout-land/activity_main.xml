@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/milkyway"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/milkyway" />
 
     <LinearLayout
         android:id="@+id/root_layout"
@@ -29,10 +29,10 @@
             android:layout_marginStart="@dimen/layout_margin_left_text_view"
             android:layout_marginTop="@dimen/layout_margin_top_text_view"
             android:layout_marginEnd="@dimen/layout_margin_right_text_view"
+            android:background="@color/white"
             android:gravity="end"
             android:text="@string/result_text"
             android:textColor="@color/black"
-            android:background="@color/white"
             android:textSize="@dimen/text_size_text_view" />
 
         <GridLayout
@@ -170,13 +170,13 @@
                 android:id="@+id/clear_button"
                 android:layout_width="@dimen/button_extended_width"
                 android:layout_height="@dimen/button_layout_height_land"
+                android:layout_columnSpan="4"
+                android:layout_gravity="right"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="@dimen/button_regular_margin_end"
                 android:tag="AC"
                 android:text="@string/clear_button_land"
-                android:layout_marginTop="16dp"
-                android:layout_columnSpan="4"
-                android:layout_gravity="right"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
         </GridLayout>
 
     </LinearLayout>

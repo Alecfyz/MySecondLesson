@@ -26,8 +26,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 //        String screeenOrientation = getScreenOrientation();
-        if (getScreenOrientation() == "land") { screeenOrientation = "Horizontal orientation"; }
-        else { screeenOrientation = "Vertical orientation"; }
+        if (getScreenOrientation().equals("land")) {
+            screeenOrientation = "Horizontal orientation";
+        } else {
+            screeenOrientation = "Vertical orientation";
+        }
 
         CalcText = findViewById(R.id.view_result);
         setNumberButtonListeners();
@@ -100,9 +103,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void setNumberButtonListeners() {
-        for (int i = 0; i < numberButtonIds.length; i++) {
-            findViewById(numberButtonIds[i]).setOnClickListener(v -> {
-                Button btn = (Button)v;
+        for (int numberButtonId : numberButtonIds) {
+            findViewById(numberButtonId).setOnClickListener(v -> {
+                Button btn = (Button) v;
                 String btnStrng = btn.getTag().toString();
                 logCycle("Key <" + btnStrng + "> pressed");
                 calculator.readkey(btnStrng);
@@ -122,8 +125,8 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    private String getScreenOrientation(){
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
+    private String getScreenOrientation() {
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
             return "port";
         else if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
             return "land";
