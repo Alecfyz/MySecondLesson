@@ -1,6 +1,5 @@
 package ru.gb.hiandroid.mysecondlesson;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -18,11 +17,10 @@ public class MainActivity extends AppCompatActivity {
     private Calculator calculator;
 
     private static final String TAG = "@@@ MainActivity";
-    private static final String COUNTER_KEY = "counter_key";
 
-    private Button switchToExtendButton;
+/*    private Button switchToExtendButton;
     private TextView resultTV;
-    private int counter;
+    private int counter;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         CalcText = findViewById(R.id.view_result);
         setNumberButtonListeners();
-        if (savedInstanceState == null) {
-            //First launch
+        if (savedInstanceState == null) { //First launch
 
             calculator = new Calculator();
 
@@ -40,13 +37,8 @@ public class MainActivity extends AppCompatActivity {
         } else {
             logCycle("onCreate Recreate Launch");
             calculator = savedInstanceState.getParcelable(CALC_STRING);
-
-//            CalcText.setText(getString(R.string.calc_res, calculator.getCurString()));
             CalcText.setText(calculator.getCurString());
         }
-
-//        resultTV = findViewById(R.id.view_result);
-//        resultTV.setText(String.valueOf(counter));
 
 /*        switchToExtendButton = findViewById(R.id.switch_to_extended_button);
 
@@ -56,6 +48,36 @@ public class MainActivity extends AppCompatActivity {
             resultTV.setText(String.valueOf(++counter));
         });*/
 
+        findViewById(R.id.add_operation_button).setOnClickListener(v -> {
+            logCycle("Key < + > pressed");
+            calculator.readkey("+");
+            CalcText.setText(calculator.getCurString());
+        });
+        findViewById(R.id.minus_operation_button).setOnClickListener(v -> {
+            logCycle("Key < - > pressed");
+            calculator.readkey("-");
+            CalcText.setText(calculator.getCurString());
+        });
+        findViewById(R.id.div_operation_button).setOnClickListener(v -> {
+            logCycle("Key < / > pressed");
+            calculator.readkey("/");
+            CalcText.setText(calculator.getCurString());
+        });
+        findViewById(R.id.mult_operation_button).setOnClickListener(v -> {
+            logCycle("Key < * > pressed");
+            calculator.readkey("*");
+            CalcText.setText(calculator.getCurString());
+        });
+        findViewById(R.id.get_result_button).setOnClickListener(v -> {
+            logCycle("Key < = > pressed");
+            calculator.readkey("=");
+            CalcText.setText(String.valueOf(calculator.getResult()));
+        });
+        findViewById(R.id.dot_symbol_button).setOnClickListener(v -> {
+            logCycle("Key < . > pressed");
+            calculator.readkey(".");
+            CalcText.setText(String.valueOf(calculator.getCurString()));
+        });
 
         Log.d(TAG, "OnCreate MainActivity");
         Toast.makeText(getApplicationContext(), "OnCreate MainActivity ", Toast.LENGTH_SHORT).show();
