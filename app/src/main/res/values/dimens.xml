@@ -7,11 +7,13 @@
     <dimen name="layout_margin_right_text_view">50dp</dimen>
     <dimen name="layout_margin_top_text_view">15dp</dimen>
     <dimen name="layout_margin_left_text_view">50dp</dimen>
-    <dimen name="height_layout">50dp</dimen>
+    <dimen name="tv_layout_height">50dp</dimen>
     <dimen name="calc_buttons_textsize">24sp</dimen>
     <dimen name="button_layout_width">60dp</dimen>
     <dimen name="button_layout_height">60dp</dimen>
     <dimen name="button_regular_margin_end">5dp</dimen>
     <dimen name="button_fringe_margin_end">10dp</dimen>
-    <dimen name="button_extended_width">155</dimen>
+    <dimen name="button_extended_width">155dp</dimen>
+    <dimen name="tv_layout_height_land">120dp</dimen>
+    <dimen name="tv_layout_width_land">173dp</dimen>
 </resources>

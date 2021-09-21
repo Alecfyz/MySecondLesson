@@ -15,16 +15,16 @@
         android:id="@+id/root_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         tools:context=".MainActivity">
 
 
         <TextView
             android:id="@+id/view_result"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/tv_layout_height"
-            android:layout_gravity="center_horizontal"
+            android:layout_width="@dimen/tv_layout_width_land"
+            android:layout_height="@dimen/tv_layout_height_land"
+            android:layout_gravity="center_vertical"
             android:layout_marginStart="@dimen/layout_margin_left_text_view"
             android:layout_marginTop="@dimen/layout_margin_top_text_view"
             android:layout_marginEnd="@dimen/layout_margin_right_text_view"
@@ -177,16 +177,15 @@
                 android:text="@string/button_div" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/switch_to_main_button"
+                android:id="@+id/switch_to_extended_button"
                 android:layout_width="@dimen/button_extended_width"
                 android:layout_height="@dimen/button_layout_height"
                 android:layout_marginEnd="@dimen/button_regular_margin_end"
-                android:tag="switch_to_main"
-                android:text="@string/switch_to_main_button"
+                android:tag="switch_to_horiz"
+                android:text="@string/switch_to_horiz_button"
                 android:layout_marginTop="32dp"
-                android:layout_marginRight="46dp"
                 android:layout_columnSpan="4"
-                android:layout_gravity="left"/>
+                android:layout_gravity="right"/>
         </GridLayout>
 
     </LinearLayout>

@@ -23,7 +23,7 @@
         <TextView
             android:id="@+id/view_result"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/height_layout"
+            android:layout_height="@dimen/tv_layout_height"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="@dimen/layout_margin_left_text_view"
             android:layout_marginTop="@dimen/layout_margin_top_text_view"
