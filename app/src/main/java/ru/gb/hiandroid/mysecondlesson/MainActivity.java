@@ -10,7 +10,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import model.Calculator;
+
 public class MainActivity extends AppCompatActivity {
+    private static final String CALC_STRING = "CALC_STRING";
+    private TextView CalcText;
+    private Calculator calculator;
 
     private static final String TAG = "@@@ MainActivity";
     private static final String COUNTER_KEY = "counter_key";
@@ -28,20 +33,20 @@ public class MainActivity extends AppCompatActivity {
             counter = savedInstanceState.getInt(COUNTER_KEY);
         } else counter = 0;
 
-        resultTV = findViewById(R.id.view_result);
-        resultTV.setText(String.valueOf(counter));
+//        resultTV = findViewById(R.id.view_result);
+//        resultTV.setText(String.valueOf(counter));
 
-        switchToExtendButton = findViewById(R.id.switch_to_extended_button);
+/*        switchToExtendButton = findViewById(R.id.switch_to_extended_button);
 
         switchToExtendButton.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ExtendedActivity.class);
             startActivity(intent);
             resultTV.setText(String.valueOf(++counter));
-        });
+        });*/
 
 
         Log.d(TAG, "OnCreate MainActivity");
-        Toast.makeText(getApplicationContext(), "OnCreate MainActivity c=" + String.valueOf(counter), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "OnCreate MainActivity ", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -56,11 +61,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putParcelable(CALC_STRING, calculator);
         super.onSaveInstanceState(outState);
-        outState.putInt(COUNTER_KEY, counter);
+    }
 
-        Log.d(TAG, "onSaveInstanceState MainActivity");
+    private void logCycle(String message) {
+        Log.d("MainActivity", message);
+
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
 }
