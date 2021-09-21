@@ -73,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
             calculator.readkey(".");
             CalcText.setText(String.valueOf(calculator.getCurString()));
         });
+        findViewById(R.id.clear_button).setOnClickListener(v -> {
+            logCycle("Key < ALL CLEAR > pressed");
+            calculator.readkey("AC");
+
+            CalcText.setText(String.valueOf(calculator.getCurString()));
+        });
 
         Log.d(TAG, "OnCreate MainActivity");
         Toast.makeText(getApplicationContext(), "OnCreate MainActivity ", Toast.LENGTH_SHORT).show();

@@ -6,7 +6,6 @@ import static model.Operations.MULT;
 import static model.Operations.NON;
 import static model.Operations.SUB;
 
-import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -17,7 +16,6 @@ public class Calculator implements IntfcCalculator, Parcelable { //
     private int fractPartArg;
     private Operations operation = NON;
     private float result;
-    //    private String curOperation;
     private boolean afterDOTintering = false;
     private String CurString;
 
@@ -32,8 +30,6 @@ public class Calculator implements IntfcCalculator, Parcelable { //
         fractPartArg = in.readInt();
 //        afterDOTintering = in.readBoolean();
         result = in.readFloat();
-//        operation = in.readTypedObject();
-//        CurString = in.readString();
     }
 
     public static final Creator<Calculator> CREATOR = new Creator<Calculator>() {
@@ -95,15 +91,14 @@ public class Calculator implements IntfcCalculator, Parcelable { //
                 this.afterDOTintering = true;
                 makeCurString();
                 break;
+
+            case "AC":
+                renew();
+                result = 0f;
+                makeCurString();
+                break;
         }
 
-    }
-
-    private String getrealkey(String key) {
-        if(key.contains("btn")) { // проверка на вшивость
-            return key.substring(3);
-        }
-        return "";
     }
 
     private void addToCurArg(String key) {
@@ -117,7 +112,7 @@ public class Calculator implements IntfcCalculator, Parcelable { //
             }
 
         }
-        Float tmparg = Float.parseFloat(intPartArg + "." + fractPartArg);
+        float tmparg = Float.parseFloat(intPartArg + "." + fractPartArg);
         if (operation == NON) { // в данный момент работаем с первым аргументом
             arg1 = tmparg;
         } else { // работаем со вторым аргументом
@@ -159,9 +154,8 @@ public class Calculator implements IntfcCalculator, Parcelable { //
         return "NONE";
     }
 
-    private void clearCurString() {
+    private void clearCurString() { // на будущее
         this.CurString = "";
-//        CurString = "";
     }
 
     public String getCurString() {
@@ -169,7 +163,6 @@ public class Calculator implements IntfcCalculator, Parcelable { //
     }
 
     private void setOp(Operations oper) {
-//
         operation = oper;
         intPartArg = 0;
         fractPartArg = 0;
@@ -183,16 +176,6 @@ public class Calculator implements IntfcCalculator, Parcelable { //
         }
     }
 
-    //private void convertToArg(String argstr){
-    //float arg;
-    //if(!CurString.equals("")){
-    //arg = Float.parseFloat(CurString);
-    //} else {
-    //arg = 0f;
-    //}
-    //if (argstr.equals("arg1")) this.arg1 = arg; else this.arg2 = arg;
-    //}
-
     public void prepareToBinaryOperation() {
         // проверяем наличчие обоих аргументов и текущей операции. Если все ок, выполняем бинарную операцию
         if (arg1 != 0f && arg2 != 0f && operation != NON) {
@@ -201,18 +184,9 @@ public class Calculator implements IntfcCalculator, Parcelable { //
         }
     }
 
-/*
-    public static Resources getResourses() {
-        return src;
-    }*/
-
 
     public void doBinaryOperation(float arg1, float arg2, Operations op) {
         clear(arg1, arg2);
-
-        Context context;
-//        String message = context.getString(R.string.asd);
-//        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 
         switch (op) {
             case ADD:
@@ -228,7 +202,6 @@ public class Calculator implements IntfcCalculator, Parcelable { //
                 doMultiplication(this.arg1, this.arg2);
                 break;
             default:
-//                throw new IllegalStateException(R.string.stext + op);
                 throw new IllegalStateException("Illegal operation " + op);
         }
     }
@@ -260,15 +233,15 @@ public class Calculator implements IntfcCalculator, Parcelable { //
         return this.result;
     }
 
-    public float getArg1() {
+    public float getArg1() { // на будущее
         return arg1;
     }
 
     public float getArg2() {
         return arg2;
-    }
+    } // на будущее
 
-    public String getCurOperation() {
+    public String getCurOperation() { // на будущее
         if (operation != null) return operation.toString();
         else return "nope";
     }
@@ -295,9 +268,7 @@ public class Calculator implements IntfcCalculator, Parcelable { //
         dest.writeFloat(arg2);
         dest.writeInt(intPartArg);
         dest.writeInt(fractPartArg);
-//        dest.writeBoolean(afterDOTintering);
         dest.writeFloat(result);
-//        dest.writeString(CurString);
     }
 
 
