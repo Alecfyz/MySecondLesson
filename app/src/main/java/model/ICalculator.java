@@ -1,6 +1,6 @@
 package model;
 
-public interface IntfcCalculator {
+public interface ICalculator {
     default void prepareToBinaryOperation() {
 
     }

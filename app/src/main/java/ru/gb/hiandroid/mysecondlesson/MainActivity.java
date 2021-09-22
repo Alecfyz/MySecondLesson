@@ -28,7 +28,10 @@ public class MainActivity extends AppCompatActivity {
         screeenOrientation = getScreenOrientation().equals("land")?"Horizontal orientation":"Vertical orientation";
 
         CalcText = findViewById(R.id.view_result);
-        setNumberButtonListeners();
+
+        setNumberButtonListeners(); // ставим лиснеры на цифровые кнопки
+        setOpButtonsListeners(); // ставим лиснеры на операционные кнопки
+
         if (savedInstanceState == null) { //First launch
 
             calculator = new Calculator();
@@ -41,6 +44,76 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+ /*       findViewById(R.id.add_operation_button).setOnClickListener(v -> {
+            logCycle("Key < + > pressed");
+            calculator.readkey("+");
+            CalcText.setText(calculator.getCurString());
+        });
+        findViewById(R.id.minus_operation_button).setOnClickListener(v -> {
+            logCycle("Key < - > pressed");
+            calculator.readkey("-");
+            CalcText.setText(calculator.getCurString());
+        });
+        findViewById(R.id.div_operation_button).setOnClickListener(v -> {
+            logCycle("Key < / > pressed");
+            calculator.readkey("/");
+            CalcText.setText(calculator.getCurString());
+        });
+        findViewById(R.id.mult_operation_button).setOnClickListener(v -> {
+            logCycle("Key < * > pressed");
+            calculator.readkey("*");
+            CalcText.setText(calculator.getCurString());
+        });
+        findViewById(R.id.get_result_button).setOnClickListener(v -> {
+            logCycle("Key < = > pressed");
+            calculator.readkey("=");
+            CalcText.setText(String.valueOf(calculator.getResult()));
+        });
+        findViewById(R.id.dot_symbol_button).setOnClickListener(v -> {
+            logCycle("Key < . > pressed");
+            calculator.readkey(".");
+            CalcText.setText(String.valueOf(calculator.getCurString()));
+        });
+        findViewById(R.id.clear_button).setOnClickListener(v -> {
+            logCycle("Key < ALL CLEAR > pressed");
+            calculator.readkey("AC");
+
+            CalcText.setText(String.valueOf(calculator.getCurString()));
+        });*/
+
+        Log.d(TAG, "OnCreate MainActivity");
+        Toast.makeText(getApplicationContext(), "OnCreate MainActivity ", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        logCycle("OnDestroy MainActivity");
+    }
+
+    private final int[] numberButtonIds = new int[]{R.id.digit_zero_button, R.id.digit_one_button, R.id.digit_two_button, R.id.digit_three_button,
+            R.id.digit_four_button, R.id.digit_five_button, R.id.digit_six_button, R.id.digit_seven_button, R.id.digit_eight_button, R.id.digit_nine_button};
+
+
+    private void setNumberButtonListeners() {
+        for (int numberButtonId : numberButtonIds) {
+            findViewById(numberButtonId).setOnClickListener(v -> {
+                Button btn = (Button) v;
+                String btnStrng = btn.getTag().toString();
+                logCycle("Key <" + btnStrng + "> pressed");
+                calculator.readkey(btnStrng);
+                CalcText.setText(calculator.getCurString());
+            });
+        }
+    }
+
+
+    private void setOpButtonsListeners(){
         findViewById(R.id.add_operation_button).setOnClickListener(v -> {
             logCycle("Key < + > pressed");
             calculator.readkey("+");
@@ -77,36 +150,6 @@ public class MainActivity extends AppCompatActivity {
 
             CalcText.setText(String.valueOf(calculator.getCurString()));
         });
-
-        Log.d(TAG, "OnCreate MainActivity");
-        Toast.makeText(getApplicationContext(), "OnCreate MainActivity ", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        logCycle("OnDestroy MainActivity");
-    }
-
-    private final int[] numberButtonIds = new int[]{R.id.digit_zero_button, R.id.digit_one_button, R.id.digit_two_button, R.id.digit_three_button,
-            R.id.digit_four_button, R.id.digit_five_button, R.id.digit_six_button, R.id.digit_seven_button, R.id.digit_eight_button, R.id.digit_nine_button};
-
-
-    private void setNumberButtonListeners() {
-        for (int numberButtonId : numberButtonIds) {
-            findViewById(numberButtonId).setOnClickListener(v -> {
-                Button btn = (Button) v;
-                String btnStrng = btn.getTag().toString();
-                logCycle("Key <" + btnStrng + "> pressed");
-                calculator.readkey(btnStrng);
-                CalcText.setText(calculator.getCurString());
-            });
-        }
     }
 
     @Override

@@ -9,7 +9,7 @@ import static model.Operations.SUB;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Calculator implements IntfcCalculator, Parcelable { //
+public class Calculator implements ICalculator, Parcelable { //
     private float arg1;
     private float arg2;
     private int intPartArg;
