@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Second Lesson</string>
+    <string name="app_name">Abacus</string>
     <string name="result_text">0</string>
     <string name="digit_zero_button">0</string>
     <string name="digit_one_button">1</string>
@@ -17,4 +17,28 @@
     <string name="button_div">/</string>
     <string name="button_res">=</string>
     <string name="button_dot">.</string>
+    <string name="clear_button">AC</string>
+    <string name="clear_button_land">Clear</string>
+    <string name="counter_text">Счетчик</string>
+    <string name="switch_to_horiz_button">Reserved</string>
+    <string name="switch_to_main_button">Обычный</string>
+    <string name="tag_0_button">0</string>
+    <string name="tag_1_button">1</string>
+    <string name="tag_2_button">2</string>
+    <string name="tag_3_button">3</string>
+    <string name="tag_4_button">4</string>
+    <string name="tag_5_button">5</string>
+    <string name="tag_6_button">6</string>
+    <string name="tag_7_button">7</string>
+    <string name="tag_8_button">8</string>
+    <string name="tag_9_button">9</string>
+    <string name="tag_plus_button">+</string>
+    <string name="tag_minus_button">-</string>
+    <string name="tag_mult_button">*</string>
+    <string name="tag_dot_button">.</string>
+    <string name="tag_getres_button">=</string>
+    <string name="tag_div_button">/</string>
+    <string name="tag_AC_button">AC</string>
+    <string name="tag_switch_to_horiz">switch_to_horiz</string>
+
 </resources>
