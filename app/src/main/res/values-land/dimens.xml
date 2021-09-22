@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tv_layout_height">120dp</dimen>
+    <dimen name="tv_layout_width">173dp</dimen>
+    <dimen name="button_layout_width">60dp</dimen>
+    <dimen name="button_layout_height">40dp</dimen>
+
+
+</resources>
