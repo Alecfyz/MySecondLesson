@@ -43,44 +43,6 @@ public class MainActivity extends AppCompatActivity {
             resultTextTV.setText(calculator.getCurString());
         }
 
-
- /*       findViewById(R.id.add_operation_button).setOnClickListener(v -> {
-            logCycle("Key < + > pressed");
-            calculator.readkey("+");
-            CalcText.setText(calculator.getCurString());
-        });
-        findViewById(R.id.minus_operation_button).setOnClickListener(v -> {
-            logCycle("Key < - > pressed");
-            calculator.readkey("-");
-            CalcText.setText(calculator.getCurString());
-        });
-        findViewById(R.id.div_operation_button).setOnClickListener(v -> {
-            logCycle("Key < / > pressed");
-            calculator.readkey("/");
-            CalcText.setText(calculator.getCurString());
-        });
-        findViewById(R.id.mult_operation_button).setOnClickListener(v -> {
-            logCycle("Key < * > pressed");
-            calculator.readkey("*");
-            CalcText.setText(calculator.getCurString());
-        });
-        findViewById(R.id.get_result_button).setOnClickListener(v -> {
-            logCycle("Key < = > pressed");
-            calculator.readkey("=");
-            CalcText.setText(String.valueOf(calculator.getResult()));
-        });
-        findViewById(R.id.dot_symbol_button).setOnClickListener(v -> {
-            logCycle("Key < . > pressed");
-            calculator.readkey(".");
-            CalcText.setText(String.valueOf(calculator.getCurString()));
-        });
-        findViewById(R.id.clear_button).setOnClickListener(v -> {
-            logCycle("Key < ALL CLEAR > pressed");
-            calculator.readkey("AC");
-
-            CalcText.setText(String.valueOf(calculator.getCurString()));
-        });*/
-
         Log.d(TAG, "OnCreate MainActivity");
         Toast.makeText(getApplicationContext(), "OnCreate MainActivity ", Toast.LENGTH_SHORT).show();
     }
