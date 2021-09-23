@@ -44,30 +44,27 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/clear_button"
-                android:layout_width="@dimen/button_layout_width"
-                android:layout_height="@dimen/button_layout_height"
+                style="@style/NumberButtonStyle"
                 android:layout_columnSpan="4"
-                android:layout_marginTop="@dimen/button_regular_margin_top"
-                android:layout_marginEnd="@dimen/button_regular_margin_end"
                 android:tag="@string/tag_AC_button"
                 android:text="@string/clear_button"
                 android:textColor="@color/black"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_seven_button"
-                style="@style/NuberButtonStyle"
+                style="@style/NumberButtonStyle"
                 android:tag="@string/tag_7_button"
                 android:text="@string/digit_seven_button" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_eight_button"
-                style="@style/NuberButtonStyle"
+                style="@style/NumberButtonStyle"
                 android:tag="@string/tag_8_button"
                 android:text="@string/digit_eight_button" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_nine_button"
-                style="@style/NuberButtonStyle"
+                style="@style/NumberButtonStyle"
                 android:tag="@string/tag_9_button"
                 android:text="@string/digit_nine_button" />
 
@@ -79,19 +76,19 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_four_button"
-                style="@style/NuberButtonStyle"
+                style="@style/NumberButtonStyle"
                 android:tag="@string/tag_4_button"
                 android:text="@string/digit_four_button" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_five_button"
-                style="@style/NuberButtonStyle"
+                style="@style/NumberButtonStyle"
                 android:tag="@string/tag_5_button"
                 android:text="@string/digit_five_button" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_six_button"
-                style="@style/NuberButtonStyle"
+                style="@style/NumberButtonStyle"
                 android:tag="@string/tag_6_button"
                 android:text="@string/digit_six_button" />
 
@@ -103,19 +100,19 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_one_button"
-                style="@style/NuberButtonStyle"
+                style="@style/NumberButtonStyle"
                 android:tag="@string/tag_1_button"
                 android:text="@string/digit_one_button" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_two_button"
-                style="@style/NuberButtonStyle"
+                style="@style/NumberButtonStyle"
                 android:tag="@string/tag_2_button"
                 android:text="@string/digit_two_button" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_three_button"
-                style="@style/NuberButtonStyle"
+                style="@style/NumberButtonStyle"
                 android:tag="@string/tag_3_button"
                 android:text="@string/digit_three_button" />
 
@@ -127,19 +124,19 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_zero_button"
-                style="@style/NuberButtonStyle"
+                style="@style/NumberButtonStyle"
                 android:tag="@string/tag_0_button"
                 android:text="@string/digit_zero_button" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/dot_symbol_button"
-                style="@style/NuberButtonStyle"
+                style="@style/NumberButtonStyle"
                 android:tag="@string/tag_dot_button"
                 android:text="@string/button_dot" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/get_result_button"
-                style="@style/NuberButtonStyle"
+                style="@style/NumberButtonStyle"
                 android:tag="@string/tag_getres_button"
                 android:text="@string/button_res" />
 
@@ -151,12 +148,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/switch_to_extended_button"
-                android:layout_width="@dimen/button_extended_width"
-                android:layout_height="@dimen/button_layout_height"
-                android:layout_columnSpan="4"
-                android:layout_gravity="right"
-                android:layout_marginTop="@dimen/button_regular_margin_top"
-                android:layout_marginEnd="@dimen/button_regular_margin_end"
+                style="@style/ReservedButtonStyle"
                 android:tag="@string/tag_switch_to_horiz"
                 android:text="@string/switch_to_horiz_button" />
         </GridLayout>
