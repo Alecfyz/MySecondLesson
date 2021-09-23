@@ -1,44 +1,42 @@
 <resources>
     <string name="app_name">Abacus</string>
-    <string name="result_text">0</string>
-    <string name="digit_zero_button">0</string>
-    <string name="digit_one_button">1</string>
-    <string name="digit_two_button">2</string>
-    <string name="digit_three_button">3</string>
-    <string name="digit_four_button">4</string>
-    <string name="digit_five_button">5</string>
-    <string name="digit_six_button">6</string>
-    <string name="digit_seven_button">7</string>
-    <string name="digit_eight_button">8</string>
-    <string name="digit_nine_button">9</string>
-    <string name="button_add">+</string>
-    <string name="button_sub">-</string>
-    <string name="button_mult">*</string>
-    <string name="button_div">/</string>
-    <string name="button_res">=</string>
-    <string name="button_dot">.</string>
-    <string name="clear_button">AC</string>
-    <string name="clear_button_land">Clear</string>
-    <string name="counter_text">Счетчик</string>
+    <string name="result_text" translatable="false">0</string>
+    <string name="digit_zero_button" translatable="false">0</string>
+    <string name="digit_one_button" translatable="false">1</string>
+    <string name="digit_two_button" translatable="false">2</string>
+    <string name="digit_three_button" translatable="false">3</string>
+    <string name="digit_four_button" translatable="false">4</string>
+    <string name="digit_five_button" translatable="false">5</string>
+    <string name="digit_six_button" translatable="false">6</string>
+    <string name="digit_seven_button" translatable="false">7</string>
+    <string name="digit_eight_button" translatable="false">8</string>
+    <string name="digit_nine_button" translatable="false">9</string>
+    <string name="button_add" translatable="false">+</string>
+    <string name="button_sub" translatable="false">-</string>
+    <string name="button_mult" translatable="false">*</string>
+    <string name="button_div" translatable="false">/</string>
+    <string name="button_res" translatable="false">=</string>
+    <string name="button_dot" translatable="false">.</string>
+    <string name="clear_button" translatable="false">AC</string>
     <string name="switch_to_horiz_button">Reserved</string>
-    <string name="switch_to_main_button">Обычный</string>
-    <string name="tag_0_button">0</string>
-    <string name="tag_1_button">1</string>
-    <string name="tag_2_button">2</string>
-    <string name="tag_3_button">3</string>
-    <string name="tag_4_button">4</string>
-    <string name="tag_5_button">5</string>
-    <string name="tag_6_button">6</string>
-    <string name="tag_7_button">7</string>
-    <string name="tag_8_button">8</string>
-    <string name="tag_9_button">9</string>
-    <string name="tag_plus_button">+</string>
-    <string name="tag_minus_button">-</string>
-    <string name="tag_mult_button">*</string>
-    <string name="tag_dot_button">.</string>
-    <string name="tag_getres_button">=</string>
-    <string name="tag_div_button">/</string>
-    <string name="tag_AC_button">AC</string>
-    <string name="tag_switch_to_horiz">switch_to_horiz</string>
+    <string name="switch_to_main_button">Regular</string>
+    <string name="tag_0_button" translatable="false">0</string>
+    <string name="tag_1_button" translatable="false">1</string>
+    <string name="tag_2_button" translatable="false">2</string>
+    <string name="tag_3_button" translatable="false">3</string>
+    <string name="tag_4_button" translatable="false">4</string>
+    <string name="tag_5_button" translatable="false">5</string>
+    <string name="tag_6_button" translatable="false">6</string>
+    <string name="tag_7_button" translatable="false">7</string>
+    <string name="tag_8_button" translatable="false">8</string>
+    <string name="tag_9_button" translatable="false">9</string>
+    <string name="tag_plus_button" translatable="false">+</string>
+    <string name="tag_minus_button" translatable="false">-</string>
+    <string name="tag_mult_button" translatable="false">*</string>
+    <string name="tag_dot_button" translatable="false">.</string>
+    <string name="tag_getres_button" translatable="false">=</string>
+    <string name="tag_div_button" translatable="false">/</string>
+    <string name="tag_AC_button" translatable="false">AC</string>
+    <string name="tag_switch_to_horiz" translatable="false">switch_to_horiz</string>
 
 </resources>
