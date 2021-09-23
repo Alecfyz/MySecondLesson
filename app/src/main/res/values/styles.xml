@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NuberButtonStyle">
+        <item name="android:layout_width">@dimen/button_layout_width</item>
+        <item name="android:layout_height">@dimen/button_layout_height</item>
+        <item name="android:layout_marginEnd">@dimen/button_regular_margin_end</item>
+    </style>
+    <style name="OpButtonStyle" parent="NuberButtonStyle">
+        <item name="android:layout_marginStart">@dimen/button_fringe_margin_start</item>
+    </style>
+</resources>
