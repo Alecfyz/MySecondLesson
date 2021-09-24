@@ -14,7 +14,7 @@ import model.Calculator;
 
 public class MainActivity extends AppCompatActivity {
     private static final String CALC_STRING = "CALC_STRING";
-    private TextView CalcText;
+    private TextView resultTextTV;
     private Calculator calculator;
     private static String screeenOrientation;
 
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         screeenOrientation = getScreenOrientation().equals("land")?"Horizontal orientation":"Vertical orientation";
 
-        CalcText = findViewById(R.id.view_result);
+        resultTextTV = findViewById(R.id.view_result);
 
         setNumberButtonListeners(); // ставим лиснеры на цифровые кнопки
         setOpButtonsListeners(); // ставим лиснеры на операционные кнопки
@@ -40,46 +40,8 @@ public class MainActivity extends AppCompatActivity {
         } else {
             logCycle("onCreate Recreate Launch");
             calculator = savedInstanceState.getParcelable(CALC_STRING);
-            CalcText.setText(calculator.getCurString());
+            resultTextTV.setText(calculator.getCurString());
         }
-
-
- /*       findViewById(R.id.add_operation_button).setOnClickListener(v -> {
-            logCycle("Key < + > pressed");
-            calculator.readkey("+");
-            CalcText.setText(calculator.getCurString());
-        });
-        findViewById(R.id.minus_operation_button).setOnClickListener(v -> {
-            logCycle("Key < - > pressed");
-            calculator.readkey("-");
-            CalcText.setText(calculator.getCurString());
-        });
-        findViewById(R.id.div_operation_button).setOnClickListener(v -> {
-            logCycle("Key < / > pressed");
-            calculator.readkey("/");
-            CalcText.setText(calculator.getCurString());
-        });
-        findViewById(R.id.mult_operation_button).setOnClickListener(v -> {
-            logCycle("Key < * > pressed");
-            calculator.readkey("*");
-            CalcText.setText(calculator.getCurString());
-        });
-        findViewById(R.id.get_result_button).setOnClickListener(v -> {
-            logCycle("Key < = > pressed");
-            calculator.readkey("=");
-            CalcText.setText(String.valueOf(calculator.getResult()));
-        });
-        findViewById(R.id.dot_symbol_button).setOnClickListener(v -> {
-            logCycle("Key < . > pressed");
-            calculator.readkey(".");
-            CalcText.setText(String.valueOf(calculator.getCurString()));
-        });
-        findViewById(R.id.clear_button).setOnClickListener(v -> {
-            logCycle("Key < ALL CLEAR > pressed");
-            calculator.readkey("AC");
-
-            CalcText.setText(String.valueOf(calculator.getCurString()));
-        });*/
 
         Log.d(TAG, "OnCreate MainActivity");
         Toast.makeText(getApplicationContext(), "OnCreate MainActivity ", Toast.LENGTH_SHORT).show();
@@ -107,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 String btnStrng = btn.getTag().toString();
                 logCycle("Key <" + btnStrng + "> pressed");
                 calculator.readkey(btnStrng);
-                CalcText.setText(calculator.getCurString());
+                resultTextTV.setText(calculator.getCurString());
             });
         }
     }
@@ -117,38 +79,38 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.add_operation_button).setOnClickListener(v -> {
             logCycle("Key < + > pressed");
             calculator.readkey("+");
-            CalcText.setText(calculator.getCurString());
+            resultTextTV.setText(calculator.getCurString());
         });
         findViewById(R.id.minus_operation_button).setOnClickListener(v -> {
             logCycle("Key < - > pressed");
             calculator.readkey("-");
-            CalcText.setText(calculator.getCurString());
+            resultTextTV.setText(calculator.getCurString());
         });
         findViewById(R.id.div_operation_button).setOnClickListener(v -> {
             logCycle("Key < / > pressed");
             calculator.readkey("/");
-            CalcText.setText(calculator.getCurString());
+            resultTextTV.setText(calculator.getCurString());
         });
         findViewById(R.id.mult_operation_button).setOnClickListener(v -> {
             logCycle("Key < * > pressed");
             calculator.readkey("*");
-            CalcText.setText(calculator.getCurString());
+            resultTextTV.setText(calculator.getCurString());
         });
         findViewById(R.id.get_result_button).setOnClickListener(v -> {
             logCycle("Key < = > pressed");
             calculator.readkey("=");
-            CalcText.setText(String.valueOf(calculator.getResult()));
+            resultTextTV.setText(String.valueOf(calculator.getResult()));
         });
         findViewById(R.id.dot_symbol_button).setOnClickListener(v -> {
             logCycle("Key < . > pressed");
             calculator.readkey(".");
-            CalcText.setText(String.valueOf(calculator.getCurString()));
+            resultTextTV.setText(String.valueOf(calculator.getCurString()));
         });
         findViewById(R.id.clear_button).setOnClickListener(v -> {
             logCycle("Key < ALL CLEAR > pressed");
             calculator.readkey("AC");
 
-            CalcText.setText(String.valueOf(calculator.getCurString()));
+            resultTextTV.setText(String.valueOf(calculator.getCurString()));
         });
     }
 

@@ -11,12 +11,9 @@
     <dimen name="button_layout_width">60dp</dimen>
     <dimen name="button_layout_height">60dp</dimen>
     <dimen name="button_regular_margin_end">5dp</dimen>
-    <dimen name="button_fringe_margin_end">10dp</dimen>
+    <dimen name="button_fringe_margin_start">5dp</dimen>
     <dimen name="button_extended_width">155dp</dimen>
-    <dimen name="tv_layout_height_land">120dp</dimen>
-    <dimen name="tv_layout_width_land">173dp</dimen>
-    <dimen name="button_layout_width_land">50dp</dimen>
-    <dimen name="button_layout_height_land">50dp</dimen>
     <dimen name="button_regular_margin_top">16dp</dimen>
     <dimen name="layout_margin_vertical_text_view">20dp</dimen>
+    <dimen name="tv_layout_width">173dp</dimen>
 </resources>
