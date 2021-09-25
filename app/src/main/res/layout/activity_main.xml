@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/calc_background" />
+        app:srcCompat="@drawable/calc_background4" />
 
     <LinearLayout
         android:id="@+id/root_layout"
@@ -150,7 +150,7 @@
                 android:id="@+id/switch_to_extended_button"
                 style="@style/ReservedButtonStyle"
                 android:tag="@string/tag_switch_to_horiz"
-                android:text="@string/switch_to_horiz_button" />
+                android:text="@string/button2_button" />
         </GridLayout>
 
     </LinearLayout>

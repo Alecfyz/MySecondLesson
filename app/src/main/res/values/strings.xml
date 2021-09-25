@@ -17,9 +17,9 @@
     <string name="button_div" translatable="false">/</string>
     <string name="button_res" translatable="false">=</string>
     <string name="button_dot" translatable="false">.</string>
-    <string name="clear_button" translatable="false">AC</string>
-    <string name="switch_to_horiz_button">Reserved</string>
-    <string name="switch_to_main_button">Regular</string>
+    <string name="clear_button" translatable="false">C</string>
+    <string name="button2_button">Fake</string>
+    <string name="button1_button">B2</string>
     <string name="tag_0_button" translatable="false">0</string>
     <string name="tag_1_button" translatable="false">1</string>
     <string name="tag_2_button" translatable="false">2</string>
