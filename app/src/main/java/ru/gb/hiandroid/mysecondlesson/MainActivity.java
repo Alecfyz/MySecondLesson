@@ -1,5 +1,6 @@
 package ru.gb.hiandroid.mysecondlesson;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,13 +26,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        screeenOrientation = getScreenOrientation().equals("land")?"Horizontal orientation":"Vertical orientation";
+        screeenOrientation = getScreenOrientation().equals("land") ? "Horizontal orientation" : "Vertical orientation";
 
-        resultTextTV = findViewById(R.id.view_result);
+        initView();
+        initCalculator(savedInstanceState);
 
-        setNumberButtonListeners(); // ставим лиснеры на цифровые кнопки
-        setOpButtonsListeners(); // ставим лиснеры на операционные кнопки
+        setNumberButtonListeners();
+        setOpButtonsListeners();
+        setAdditionButtonsListeners();
 
+        Log.d(TAG, "OnCreate MainActivity");
+    }
+
+    void initCalculator(Bundle savedInstanceState) {
         if (savedInstanceState == null) { //First launch
 
             calculator = new Calculator();
@@ -42,9 +49,11 @@ public class MainActivity extends AppCompatActivity {
             calculator = savedInstanceState.getParcelable(CALC_STRING);
             resultTextTV.setText(calculator.getCurString());
         }
+    }
 
-        Log.d(TAG, "OnCreate MainActivity");
-        Toast.makeText(getApplicationContext(), "OnCreate MainActivity ", Toast.LENGTH_SHORT).show();
+    private void initView() {
+        resultTextTV = findViewById(R.id.view_result);
+
     }
 
     @Override
@@ -74,8 +83,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void setAdditionButtonsListeners() {
+        findViewById(R.id.switch_to_settings_button).setOnClickListener(v -> {
+            boolean isThemeNight = isNightThemeActive(); // todo
+            Intent intent = new Intent(this, SettingsActivity.class);
+            intent.putExtra(SettingsActivity.SETTINGS_ISNIGHT_THEME_EXTRA_KEY, isThemeNight);
 
-    private void setOpButtonsListeners(){
+        });
+    }
+
+    private boolean isNightThemeActive() {
+        return false;
+    }
+
+    private void setOpButtonsListeners() {
         findViewById(R.id.add_operation_button).setOnClickListener(v -> {
             logCycle("Key < + > pressed");
             calculator.readkey("+");

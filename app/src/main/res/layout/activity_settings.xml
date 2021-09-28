@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/calc_background4" />
+
+    <LinearLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+
+
+        <Switch
+            android:id="@+id/nightSwither"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/isNightTheme"
+            android:layout_marginStart="@dimen/layout_margin_right_text_view"
+            android:layout_marginEnd="@dimen/layout_margin_right_text_view"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:gravity="start"
+            android:focusedByDefault="true"
+            android:checked="false"
+            ></Switch>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save_button"
+            style="@style/SettingsButtonStyle"
+            android:tag="@string/tag_save_settings"
+            android:text="@string/save_button" />
+    </LinearLayout>
+</FrameLayout>

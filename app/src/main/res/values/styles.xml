@@ -21,5 +21,14 @@
         <item name="android:layout_marginTop">@dimen/button_regular_margin_top</item>
         <item name="android:layout_marginEnd">@dimen/button_regular_margin_end</item>
     </style>
+    <style name="SettingsButtonStyle" parent="ReservedButtonStyle">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/settings_buttons_textsize</item>
+    </style>
+
+    <style name="AdditionButtonStyle" parent="ReservedButtonStyle">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/addition_buttons_textsize</item>
+    </style>
 
 </resources>
