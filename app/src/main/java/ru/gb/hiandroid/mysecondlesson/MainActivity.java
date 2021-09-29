@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        screeenOrientation = getScreenOrientation().equals("land") ? "Horizontal orientation" : "Vertical orientation";
+        screeenOrientation = getScreenOrientation();
 
         initView();
         initCalculator(savedInstanceState);
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setNumberButtonListeners();
         setOpButtonsListeners();
         setAdditionButtonsListeners();
+
 
         Log.d(TAG, "OnCreate MainActivity");
     }
@@ -84,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setAdditionButtonsListeners() {
+        if (screeenOrientation.equals("land")) {
+            logCycle("@#@ Land!");
+            return;
+        }
         findViewById(R.id.switch_to_settings_button).setOnClickListener(v -> {
             boolean isThemeNight = isNightThemeActive(); // todo
             Intent intent = new Intent(this, SettingsActivity.class);
@@ -142,7 +147,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void logCycle(String message) {
-        Log.d(TAG + " (" + screeenOrientation + ")", message);
+        String logScreeenOrientation = screeenOrientation.equals("land") ? "Horizontal orientation" : "Vertical orientation";
+
+        Log.d(TAG + " (" + logScreeenOrientation + ")", message);
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
