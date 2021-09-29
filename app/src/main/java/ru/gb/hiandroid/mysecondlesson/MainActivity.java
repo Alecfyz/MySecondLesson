@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent data = result.getData();
                 Boolean isNewThemeNight = Boolean.valueOf(data.getStringExtra(SettingsActivity.SETTINGS_ISNIGHT_EVAL_THEME_EXTRA_KEY));
                 isThemeNight = isNewThemeNight;
-                Toast.makeText(this, "Returned theme = " + String.valueOf(isNewThemeNight), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Returned theme = " + isNewThemeNight, Toast.LENGTH_SHORT).show();
                 setLocalTheme();
             }
         });
@@ -128,15 +128,10 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         findViewById(R.id.switch_to_settings_button).setOnClickListener(v -> {
-            isNightThemeActive();
             Intent intent = new Intent(this, SettingsActivity.class);
             intent.putExtra(SettingsActivity.SETTINGS_ISNIGHT_THEME_EXTRA_KEY, isThemeNight);
             settingsLauncher.launch(intent);
         });
-    }
-
-    private boolean isNightThemeActive() {
-        return isThemeNight;
     }
 
     private void setOpButtonsListeners() {
