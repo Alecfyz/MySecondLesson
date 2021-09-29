@@ -3,8 +3,10 @@ package ru.gb.hiandroid.mysecondlesson;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +15,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import model.Calculator;
 
@@ -21,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView resultTextTV;
     private Calculator calculator;
     private static String screeenOrientation;
-    boolean isThemeNight;
+    private boolean isThemeNight = false;
 
     private static final String TAG = "@@@ MainActivity";
 
@@ -30,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setLocalTheme();
+
         setContentView(R.layout.activity_main);
 
         screeenOrientation = getScreenOrientation();
@@ -43,7 +48,19 @@ public class MainActivity extends AppCompatActivity {
         prepareLaunchers();
 
 
-        Log.d(TAG, "OnCreate MainActivity");
+        //Log.d(TAG, "OnCreate MainActivity");
+    }
+
+    private void setLocalTheme() {
+        if (isThemeNight) {
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            getDelegate().setLocalNightMode(
+                    AppCompatDelegate.MODE_NIGHT_NO);
+        }
+        logCycle("__Recreate__");
+            recreate();
+
     }
 
     private void prepareLaunchers() {
@@ -52,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent data = result.getData();
                 Boolean isNewThemeNight = Boolean.valueOf(data.getStringExtra(SettingsActivity.SETTINGS_ISNIGHT_EVAL_THEME_EXTRA_KEY));
                 isThemeNight = isNewThemeNight;
-                logCycle("Returned theme = " + String.valueOf(isNewThemeNight));
+                //logCycle("Returned theme = " + String.valueOf(isNewThemeNight));
+                setLocalTheme();
             }
         });
     }
@@ -107,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         findViewById(R.id.switch_to_settings_button).setOnClickListener(v -> {
-            isNightThemeActive(); // todo
+            isNightThemeActive();
             Intent intent = new Intent(this, SettingsActivity.class);
             intent.putExtra(SettingsActivity.SETTINGS_ISNIGHT_THEME_EXTRA_KEY, isThemeNight);
             settingsLauncher.launch(intent);
