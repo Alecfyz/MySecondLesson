@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         initView();
         initCalculator(savedInstanceState);
 
+
         setNumberButtonListeners();
         setOpButtonsListeners();
         setAdditionButtonsListeners();
@@ -82,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) { //First launch
 
             calculator = new Calculator();
+
 
             logCycle("onCreate First Launch");
         } else {
