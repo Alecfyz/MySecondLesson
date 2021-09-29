@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
@@ -21,19 +20,17 @@
         tools:context=".MainActivity">
 
 
-
         <Switch
             android:id="@+id/nightSwither"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/isNightTheme"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/layout_margin_right_text_view"
-            android:layout_marginEnd="@dimen/layout_margin_right_text_view"
             android:layout_marginTop="@dimen/layout_margin_top"
-            android:gravity="start"
-            android:focusedByDefault="true"
+            android:layout_marginEnd="@dimen/layout_margin_right_text_view"
             android:checked="false"
-            ></Switch>
+            android:focusedByDefault="true"
+            android:gravity="start"
+            android:text="@string/isNightTheme"></Switch>
 
 
         <com.google.android.material.button.MaterialButton

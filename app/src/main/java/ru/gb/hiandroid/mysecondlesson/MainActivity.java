@@ -1,5 +1,6 @@
 package ru.gb.hiandroid.mysecondlesson;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,8 +21,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView resultTextTV;
     private Calculator calculator;
     private static String screeenOrientation;
+    boolean isThemeNight;
 
     private static final String TAG = "@@@ MainActivity";
+
+    private ActivityResultLauncher<Intent> settingsLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +40,21 @@ public class MainActivity extends AppCompatActivity {
         setNumberButtonListeners();
         setOpButtonsListeners();
         setAdditionButtonsListeners();
+        prepareLaunchers();
 
 
         Log.d(TAG, "OnCreate MainActivity");
+    }
+
+    private void prepareLaunchers() {
+        settingsLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+            if (result.getResultCode() == Activity.RESULT_OK) {
+                Intent data = result.getData();
+                Boolean isNewThemeNight = Boolean.valueOf(data.getStringExtra(SettingsActivity.SETTINGS_ISNIGHT_EVAL_THEME_EXTRA_KEY));
+                isThemeNight = isNewThemeNight;
+                logCycle("Returned theme = " + String.valueOf(isNewThemeNight));
+            }
+        });
     }
 
     void initCalculator(Bundle savedInstanceState) {
@@ -85,20 +103,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setAdditionButtonsListeners() {
-        if (screeenOrientation.equals("land")) {
-            logCycle("@#@ Land!");
+        if (screeenOrientation.equals("land")) { // we have no "Settings" button in land layout. Sad but true.
             return;
         }
         findViewById(R.id.switch_to_settings_button).setOnClickListener(v -> {
-            boolean isThemeNight = isNightThemeActive(); // todo
+            isNightThemeActive(); // todo
             Intent intent = new Intent(this, SettingsActivity.class);
             intent.putExtra(SettingsActivity.SETTINGS_ISNIGHT_THEME_EXTRA_KEY, isThemeNight);
-
+            settingsLauncher.launch(intent);
         });
     }
 
     private boolean isNightThemeActive() {
-        return false;
+        return isThemeNight;
     }
 
     private void setOpButtonsListeners() {

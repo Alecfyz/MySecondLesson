@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -16,7 +15,7 @@ public class SettingsActivity extends AppCompatActivity {
     static final String SETTINGS_ISNIGHT_EVAL_THEME_EXTRA_KEY = "IS_NIGHT_EVAL_SETTINGS";
     static boolean isNight;
     private Switch nightSwitcher;
-    private Button save_button;
+    private Button saveButton;
 
 
     @Override
@@ -33,7 +32,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void setupSettings() {
 
-        save_button.setOnClickListener(v -> {
+        saveButton.setOnClickListener(v -> {
             Intent outData = new Intent();
             boolean isNightEval = nightSwitcher.isChecked();
             outData.putExtra(SETTINGS_ISNIGHT_EVAL_THEME_EXTRA_KEY, String.valueOf(isNightEval));
@@ -44,7 +43,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void initSettings() {
         nightSwitcher = findViewById(R.id.nightSwither);
-        save_button = findViewById(R.id.save_button);
+        saveButton = findViewById(R.id.save_button);
     }
 
     private void fillSettings(Intent data) {

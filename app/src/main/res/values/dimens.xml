@@ -18,6 +18,6 @@
     <dimen name="button_regular_margin_top">16dp</dimen>
     <dimen name="layout_margin_vertical_text_view">20dp</dimen>
     <dimen name="tv_layout_width">173dp</dimen>
-    <dimen name="settings_buttons_textsize">22sp</dimen>
+    <dimen name="settings_buttons_textsize">16sp</dimen>
     <dimen name="addition_buttons_textsize">16sp</dimen>
 </resources>
