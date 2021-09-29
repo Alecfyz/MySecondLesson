@@ -3,10 +3,8 @@ package ru.gb.hiandroid.mysecondlesson;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.TypedValue;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView resultTextTV;
     private Calculator calculator;
     private static String screeenOrientation;
-    private boolean isThemeNight = false;
+    private static boolean isThemeNight;
 
     private static final String TAG = "@@@ MainActivity";
 
@@ -32,8 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //setLocalTheme();
         super.onCreate(savedInstanceState);
-        setLocalTheme();
+
 
         setContentView(R.layout.activity_main);
 
@@ -53,13 +52,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void setLocalTheme() {
         if (isThemeNight) {
-            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-            getDelegate().setLocalNightMode(
-                    AppCompatDelegate.MODE_NIGHT_NO);
-        }
-        logCycle("__Recreate__");
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             recreate();
+            logCycle(" AfterRestart = " + isThemeNight);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            recreate();
+
+            logCycle(" AfterRestart = " + isThemeNight);
+
+        }
+
 
     }
 
@@ -69,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent data = result.getData();
                 Boolean isNewThemeNight = Boolean.valueOf(data.getStringExtra(SettingsActivity.SETTINGS_ISNIGHT_EVAL_THEME_EXTRA_KEY));
                 isThemeNight = isNewThemeNight;
-                //logCycle("Returned theme = " + String.valueOf(isNewThemeNight));
+                Toast.makeText(this, "Returned theme = " + String.valueOf(isNewThemeNight), Toast.LENGTH_SHORT).show();
                 setLocalTheme();
             }
         });

@@ -28,10 +28,10 @@
             android:layout_marginStart="@dimen/layout_margin_left_text_view"
             android:layout_marginTop="@dimen/layout_margin_top_text_view"
             android:layout_marginEnd="@dimen/layout_margin_right_text_view"
-            android:background="@color/white"
+            android:background="?colorOnPrimary"
             android:gravity="end"
             android:text="@string/result_text"
-            android:textColor="@color/black"
+            android:textColor="?colorPrimary"
             android:textSize="@dimen/text_size_text_view" />
 
         <GridLayout
