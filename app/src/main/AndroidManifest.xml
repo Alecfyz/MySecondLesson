@@ -20,6 +20,13 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.ACTION_SEND" />
+                <action android:name="android.intent.action.INSERT" />
+                <action android:name="android.intent.action.ANSWER" />
+                <action android:name="android.intent.action.ATTACH_DATA" />
+                <action android:name="android.intent.action.EDIT" />
+                <action android:name="android.intent.action.GET_CONTENT" />
+
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
