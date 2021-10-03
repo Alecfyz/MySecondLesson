@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BaseStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:backgroundTint">@color/gray</item>
+        <item name="android:background">@color/gray</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+    </style>
+</resources>

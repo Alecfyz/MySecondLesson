@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Абакус</string>
     <string name="button1_button">Обычный</string>
-    <string name="button2_button">Кн2</string>
+    <string name="settings_button">Настройки</string>
+    <string name="save_button">Сохранить</string>
+    <string name="isNightTheme">Включить ночную тему?</string>
+    <string name="clear_button">Стереть</string>
+
 
 </resources>

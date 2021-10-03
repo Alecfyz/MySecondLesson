@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
@@ -29,10 +28,10 @@
             android:layout_marginStart="@dimen/layout_margin_left_text_view"
             android:layout_marginTop="@dimen/layout_margin_top_text_view"
             android:layout_marginEnd="@dimen/layout_margin_right_text_view"
-            android:background="@color/white"
+            android:background="?colorOnPrimary"
             android:gravity="end"
             android:text="@string/result_text"
-            android:textColor="@color/black"
+            android:textColor="?colorPrimary"
             android:textSize="@dimen/text_size_text_view" />
 
         <GridLayout
@@ -48,7 +47,7 @@
                 android:layout_columnSpan="4"
                 android:tag="@string/tag_AC_button"
                 android:text="@string/clear_button"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_seven_button"
@@ -147,10 +146,10 @@
                 android:text="@string/button_div" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/switch_to_extended_button"
-                style="@style/ReservedButtonStyle"
-                android:tag="@string/tag_switch_to_horiz"
-                android:text="@string/button2_button" />
+                android:id="@+id/switch_to_settings_button"
+                style="@style/AdditionButtonStyle"
+                android:tag="@string/tag_switch_to_settings_button"
+                android:text="@string/settings_button" />
         </GridLayout>
 
     </LinearLayout>

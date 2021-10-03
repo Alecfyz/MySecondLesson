@@ -1,5 +1,7 @@
 package ru.gb.hiandroid.mysecondlesson;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,8 +9,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import model.Calculator;
 
@@ -17,24 +22,68 @@ public class MainActivity extends AppCompatActivity {
     private TextView resultTextTV;
     private Calculator calculator;
     private static String screeenOrientation;
+    private static boolean isThemeNight;
 
     private static final String TAG = "@@@ MainActivity";
 
+    private ActivityResultLauncher<Intent> settingsLauncher;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //setLocalTheme();
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
 
-        screeenOrientation = getScreenOrientation().equals("land")?"Horizontal orientation":"Vertical orientation";
+        screeenOrientation = getScreenOrientation();
 
-        resultTextTV = findViewById(R.id.view_result);
+        initView();
+        initCalculator(savedInstanceState);
 
-        setNumberButtonListeners(); // ставим лиснеры на цифровые кнопки
-        setOpButtonsListeners(); // ставим лиснеры на операционные кнопки
 
+        setNumberButtonListeners();
+        setOpButtonsListeners();
+        setAdditionButtonsListeners();
+        prepareLaunchers();
+
+
+        //Log.d(TAG, "OnCreate MainActivity");
+    }
+
+    private void setLocalTheme() {
+        if (isThemeNight) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            recreate();
+            logCycle(" AfterRestart = " + isThemeNight);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            recreate();
+
+            logCycle(" AfterRestart = " + isThemeNight);
+
+        }
+
+
+    }
+
+    private void prepareLaunchers() {
+        settingsLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+            if (result.getResultCode() == Activity.RESULT_OK) {
+                Intent data = result.getData();
+                Boolean isNewThemeNight = Boolean.valueOf(data.getStringExtra(SettingsActivity.SETTINGS_ISNIGHT_EVAL_THEME_EXTRA_KEY));
+                isThemeNight = isNewThemeNight;
+                Toast.makeText(this, "Returned theme = " + isNewThemeNight, Toast.LENGTH_SHORT).show();
+                setLocalTheme();
+            }
+        });
+    }
+
+    void initCalculator(Bundle savedInstanceState) {
         if (savedInstanceState == null) { //First launch
 
             calculator = new Calculator();
+
 
             logCycle("onCreate First Launch");
         } else {
@@ -42,9 +91,11 @@ public class MainActivity extends AppCompatActivity {
             calculator = savedInstanceState.getParcelable(CALC_STRING);
             resultTextTV.setText(calculator.getCurString());
         }
+    }
 
-        Log.d(TAG, "OnCreate MainActivity");
-        Toast.makeText(getApplicationContext(), "OnCreate MainActivity ", Toast.LENGTH_SHORT).show();
+    private void initView() {
+        resultTextTV = findViewById(R.id.view_result);
+
     }
 
     @Override
@@ -74,8 +125,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void setAdditionButtonsListeners() {
+        if (screeenOrientation.equals("land")) { // we have no "Settings" button in land layout. Sad but true.
+            return;
+        }
+        findViewById(R.id.switch_to_settings_button).setOnClickListener(v -> {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            intent.putExtra(SettingsActivity.SETTINGS_ISNIGHT_THEME_EXTRA_KEY, isThemeNight);
+            settingsLauncher.launch(intent);
+        });
+    }
 
-    private void setOpButtonsListeners(){
+    private void setOpButtonsListeners() {
         findViewById(R.id.add_operation_button).setOnClickListener(v -> {
             logCycle("Key < + > pressed");
             calculator.readkey("+");
@@ -121,7 +182,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void logCycle(String message) {
-        Log.d(TAG + " (" + screeenOrientation + ")", message);
+        String logScreeenOrientation = screeenOrientation.equals("land") ? "Horizontal orientation" : "Vertical orientation";
+
+        Log.d(TAG + " (" + logScreeenOrientation + ")", message);
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 

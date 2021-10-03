@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="NumberButtonStyle">
+
+    <style name="BaseStyle">
+        <item name="android:textColor">?colorPrimary</item>
+        <item name="android:backgroundTint">?colorOnPrimary</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="NumberButtonStyle" >
         <item name="android:layout_width">@dimen/button_layout_width</item>
         <item name="android:layout_height">@dimen/button_layout_height</item>
         <item name="android:layout_marginEnd">@dimen/button_regular_margin_end</item>
-        <item name="android:backgroundTint">@color/cardview_light_background</item>
-        <item name="android:textColor">@color/teal_700</item>
         <item name="android:textSize">@dimen/calc_buttons_textsize</item>
-        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textColor">?colorPrimary</item>
+        <item name="android:backgroundTint">?colorOnPrimary</item>
+        <item name="android:fontFamily">sans-serif-light</item>
     </style>
     <style name="OpButtonStyle" parent="NumberButtonStyle">
         <item name="android:layout_marginStart">@dimen/button_fringe_margin_start</item>
@@ -20,6 +27,15 @@
         <item name="android:layout_marginStart">@dimen/button_fringe_margin_start</item>
         <item name="android:layout_marginTop">@dimen/button_regular_margin_top</item>
         <item name="android:layout_marginEnd">@dimen/button_regular_margin_end</item>
+    </style>
+    <style name="SettingsButtonStyle" parent="ReservedButtonStyle">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/settings_buttons_textsize</item>
+    </style>
+
+    <style name="AdditionButtonStyle" parent="ReservedButtonStyle">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/addition_buttons_textsize</item>
     </style>
 
 </resources>
